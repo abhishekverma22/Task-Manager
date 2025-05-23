@@ -1,0 +1,472 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+nav {
+  z-index: 1;
+  left: 12%;
+  position: fixed;
+  top: 10px;
+  width: 80%;
+  height: 7vh;
+  margin: auto;
+  border-radius: 50px;
+  /* border: 2px solid white; */
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+  border-right: 1px solid rgba(255, 255, 255, 0.9);
+  border-left: 1px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#logo {
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: darkblue;
+  letter-spacing: 3px;
+}
+
+#navItems {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#navItems button {
+  background-color: transparent;
+  padding: 10px 20px;
+  border: none;
+  font-weight: 600;
+  color: rgb(50, 66, 10);
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  transition: 0.3s ease-in-out;
+}
+
+#navItems button:hover {
+  color: darkcyan;
+  text-shadow: 0px 0px 10px rgb(255, 255, 242);
+}
+
+.cotainer {
+  display: flex;
+
+}
+
+#left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 15%;
+  background-color: rgb(255, 254, 240);
+}
+
+#left footer {
+  text-align: center;
+  color: #cdc0ff;
+  padding: 10px;
+  border-radius: 10px;
+  height: 500px;
+  max-height: 500px;
+  width: 100%;
+  background-color: black;
+}
+
+#left footer p {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cdc0ff71;
+}
+
+#about {
+  color: red;
+}
+
+#left footer h5 {
+  font-size: clamp(10px, 14px, 20px);
+}
+
+#right {
+  min-height: 100vh;
+  margin-left: 15%;
+  width: 85%;
+  background-color: rgb(255, 203, 203);
+}
+
+.left-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 90vh;
+  width: 15%;
+  padding: 20px;
+}
+
+.newTask {
+  margin-bottom: 30px;
+  cursor: pointer;
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #cdc0ff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.newTask h1 {
+  font-size: 40px;
+  margin-top: -10px;
+  color: #cdc0ff;
+}
+
+.newTask .sym {
+  margin-bottom: 10px;
+  margin-top: -15px;
+}
+
+.new {
+  background-color: rgb(103, 153, 103);
+}
+
+.imp {
+  background-color: rgb(158, 135, 126);
+}
+
+.tasks {
+  margin-top: 10vh;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+
+.task {
+
+  max-width: 400px;
+  background-color: rgb(233, 238, 243);
+  border-radius: 20px;
+  padding: 20px;
+  border: 2px solid rebeccapurple;
+}
+
+.task h3 {
+  text-align: center;
+  font-size: clamp(1rem, 1.5rem, 2.1rem);
+  border-bottom: 1px solid gray;
+  padding-bottom: 2px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task h1 {
+  margin-top: 8px;
+  text-transform: capitalize;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task span {
+  font-weight: 400;
+  color: rgb(63, 63, 63);
+}
+
+.task p {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  color: rgb(0, 0, 0);
+  text-transform: capitalize;
+}
+
+.task #impNote {
+  color: red;
+  font-size: clamp(10px, 18px, 20px);
+}
+
+.task #description {
+  white-space: nowrap;
+  /* Prevents text from wrapping */
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+
+
+/*  addTaskForm */
+#addTaskForm {
+  max-height: 1000px;
+  display: none;
+  text-transform: capitalize;
+  padding: 30px;
+  width: 40%;
+  position: absolute;
+  left: 15%;
+  border: 5px solid whitesmoke;
+  border-radius: 30px;
+  top: 10vh;
+  background-color: rgba(179, 196, 196, 0.842);
+}
+
+#addTaskForm .inputs {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: clamp(1rem, 2rem, 3rem);
+  padding: 20px;
+  background-color: #e5e2f09e;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#addTaskForm .inputs input {
+  font-size: 18px;
+  padding: 10px;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+#addTaskForm .inputs input:focus {
+  outline: 2px solid orange;
+}
+
+#addTaskForm .checkBox {
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  transform: scale(2.5);
+  accent-color: green;
+}
+
+#addTaskForm .btns {
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.btns button {
+  cursor: pointer;
+  text-align: center;
+  padding: 5px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.btns #addTask {
+  background-color: darkgreen;
+  color: white;
+  padding: 7px 30px;
+
+  &:hover {
+    background-color: lightseagreen;
+    box-shadow: 0 0 8px black;
+  }
+
+
+
+}
+
+.btns #discard {
+  font-weight: 800;
+  background-color: red;
+  color: white;
+
+  &:hover {
+    background-color: lightcoral;
+    box-shadow: 0 0 8px black;
+  }
+
+}
+
+
+/* .btns button:hover{
+
+} */
+
+
+
+/* responsive  design */
+
+@media (max-width: 480px) {
+  nav {
+    left: 5%;
+    width: 90%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #logo {
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+
+  #navItems {
+    width: 55%;
+  }
+
+  #navItems button {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  #left {
+    width: 20%;
+  }
+
+  #right {
+    padding-left: 20px;
+    width: 100%;
+  }
+
+  .left-container {
+    height: 88%;
+    width: 20%;
+    padding: 0;
+  }
+
+  .newTask {
+    width: 90%;
+  }
+
+  .newTask .sym {
+    margin-top: 1px;
+  }
+
+  .newTask h1 {
+    font-size: 20px;
+    margin-bottom: 4px;
+    margin-top: 0.2px;
+  }
+
+  .newTask p {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .tasks {
+
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #addTaskForm {
+    padding: 5px;
+    width: 300px;
+    left: 20%;
+  }
+
+  #addTaskForm .inputs {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  #addTaskForm .inputs input {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  input[type="checkbox"] {
+    transform: scale(1.4);
+    accent-color: green;
+  }
+
+  .btns {
+    padding: 2px;
+    border: 1px solid black;
+    justify-content: space-between;
+  }
+
+  .btns button {
+    font-size: 14px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  .btns #addTask {
+    width: 50%;
+    padding: 6px;
+  }
+
+  .btns #discard {
+    padding: 5px 10px;
+  }
+
+  #left footer p {
+    font-size: 11px;
+  }
+
+
+
+}
+
+
+
+
+@media (min-width: 769px) and (max-width:1279px) {
+  nav {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+  }
+
+  #logo {
+    font-size: 18px;
+  }
+
+  #navItems {
+    width: 60%;
+  }
+
+  #navItems button {
+    padding: 10px;
+
+  }
+
+  .newTask {
+    margin-top: 30px;
+  }
+
+
+
+}

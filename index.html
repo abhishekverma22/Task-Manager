@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Task Manager App</title>
+</head>
+
+<body onload="displayData()">
+
+  <header>
+    <nav>
+      <section id="logo">
+        TASK MANAGER
+      </section>
+      <section id="navItems">
+        <button onclick="displayData()">Home</button>
+        <button>Dark mode</button>
+      </section>
+    </nav>
+
+
+  </header>
+  <div class="cotainer">
+    <aside id="left">
+      <div class="left-container">
+        <div class="newTask" id="myTask" onclick="displayData()">
+          <h1 class="sym">✔</h1>
+          <p>my task</p>
+        </div>
+        <div class="newTask new" id="addNewTask">
+          <h1>➕</h1>
+          <p>new</p>
+        </div>
+        <div class="newTask imp" id="importanTask">
+          <h1>≈</h1>
+          <p>Importan</p>
+        </div>
+        <footer>
+          <p id="about">About Task Manager App</p>
+          <p>White box show normal Task's</p>
+          <p>Red box show Important Task's</p>
+        </footer>
+      </div>
+
+
+
+
+
+    </aside>
+    <aside id="right">
+      <div class="tasks">
+
+        <!-- add task  dynamically -->
+      </div>
+    </aside>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- new task add form -->
+
+  <div id="addTaskForm">
+    <div class="inputs">
+      <label for="title">title</label>
+      <input type="text" id="title" placeholder="enter your task title...">
+    </div>
+    <div class="inputs">
+      <label for="description">description</label>
+      <input type="text" id="description" placeholder="enter your task description...">
+    </div>
+    <div class="inputs">
+      <label for="title">date</label>
+      <input type="date" id="date">
+    </div>
+    <div class="inputs">
+      <label for="time">time</label>
+      <input type="time" id="time">
+    </div>
+    <div class="inputs checkBox">
+      <label for="importan">importan task</label>
+      <input type="checkbox" id="important">
+    </div>
+    <div class="inputs btns">
+      <button id="addTask">Add task</button>
+      <button id="discard">Discard</button>
+
+    </div>
+
+
+  </div>
+</body>
+
+</html>
